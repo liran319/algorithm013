@@ -65,7 +65,9 @@ def bfs(root):
   ```
 
 * 和搜索旋转数组类似，要找到旋转点, 就是不断的剪掉单调递增的一侧;
-  终止循环的条件是 left + 1 == right, 且 nums[left] > nums[right]
+  终止循环的条件可以是以下两种：
+  1. nums[left] < nums[mid] < nums[right], 单调递增，则取出left
+  2. left + 1 == right, 且 nums[left] > nums[right]，取出变小值
   时间复杂度：O(logN)
   空间复杂度：O(1)
 
